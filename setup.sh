@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-. git/setup.sh
+DIR=$(dirname $0)
+
+${DIR}/git/setup.sh
+${DIR}/zsh/setup.sh

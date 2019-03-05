@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 source $(dirname $0)/../util.sh
 
@@ -17,3 +17,6 @@ else
     printf "${SHELL} is default shell\n"
     prompt_yn "Change default shell to zsh?" && chsh -s $(which zsh) || interrupt_setup
 fi
+
+# Backup ~/.zshrc if exists
+test -f ~/.zshrc && mv ~/.zshrc ~/.zshrc.bak && printf "Old ~/.zshrc was backup as ~/.zshrc.bak\n"
