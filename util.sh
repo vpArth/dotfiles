@@ -30,3 +30,8 @@ install_package() {
         printf "Can't detect package manager (Known are: apt-get, brew, pkg, pacman)\s"
     fi
 }
+
+interrupt_setup() {
+    printf "Setup interrupted\n"
+    exit 255
+}
