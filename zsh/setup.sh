@@ -19,4 +19,21 @@ else
 fi
 
 # Backup ~/.zshrc if exists
-test -f ~/.zshrc && mv ~/.zshrc ~/.zshrc.bak && printf "Old ~/.zshrc was backup as ~/.zshrc.bak\n"
+test -f ~/.zshrc && test ! -f ~/.zshrc.bak && cp ~/.zshrc ~/.zshrc.bak && printf "Old ~/.zshrc was backup as ~/.zshrc.bak\n"
+
+# Oh-my-zsh setup
+ZSH_INSTALL="https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
+if binexists curl; then
+    sh -c "$(curl -fsSL ${ZSH_INSTALL})"
+elif binexists wget; then
+    sh -c "$(wget ${ZSH_INSTALL} -O -)"
+else
+    printf "No known way to download file (curl/wget)\n"
+fi
+
+printf 'source ~/dotfiles/zsh/zshrc.sh\n' > ~/.zshrc
+
+cp -r ~/dotfiles/zsh/themes/* ${ZSH}/custom/themes/
+cp -r ~/dotfiles/zsh/plugins/* ${ZSH}/custom/plugins
+
+exec zsh
