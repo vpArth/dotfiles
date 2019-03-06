@@ -37,4 +37,3 @@ printf 'source ~/dotfiles/zsh/zshrc.sh\n' > ~/.zshrc
 cp -r ~/dotfiles/zsh/themes/* ${ZSH}/custom/themes/
 cp -r ~/dotfiles/zsh/plugins/* ${ZSH}/custom/plugins
 
-exec zsh
