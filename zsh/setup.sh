@@ -22,6 +22,7 @@ fi
 test -f ~/.zshrc && test ! -f ~/.zshrc.bak && cp ~/.zshrc ~/.zshrc.bak && printf "Old ~/.zshrc was backup as ~/.zshrc.bak\n"
 
 # Oh-my-zsh setup
+ZSH=$HOME/.oh-my-zsh
 ZSH_INSTALL="https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
 if binexists curl; then
     sh -c "$(curl -fsSL ${ZSH_INSTALL})"
