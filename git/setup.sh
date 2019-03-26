@@ -18,4 +18,5 @@ cat ~/dotfiles/git/ignore/* > ~/.gitignore
 git config --global user.name "${NAME}"
 git config --global user.email "${EMAIL}"
 
+
 printf "[git]\tUser ${NAME} <${EMAIL}> was configured\n"
