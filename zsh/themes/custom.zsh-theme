@@ -1,7 +1,7 @@
 PROMPT="%{$fg[white]%}[%{$reset_color%}"
 
-PROMPT+="%{$fg_bold[cyan]%}${PWD/#$HOME/~}%{$reset_color%}"         # pwd
-PROMPT+='%(?.., %{$fg[red]%}%?%{$reset_color%})'                    # $?
+PROMPT+="%{$fg_bold[cyan]%}%~%{$reset_color%}"         # pwd
+PROMPT+='%(?.., %{$fg[red]%}%?%{$reset_color%})'       # $?
 
 # Git
 if git rev-parse --is-inside-work-tree 2> /dev/null | grep -q 'true' ; then
@@ -18,4 +18,5 @@ if [[ $! -ne 0 ]]; then
     PROMPT+="%{$fg[yellow]%}PID:$!%{$reset_color%}"
 fi
 
-PROMPT+="%{$fg[white]%}]: %{$reset_color%}% "
+PROMPT+="%{$fg[white]%}]: %# %{$reset_color%}% "
+
