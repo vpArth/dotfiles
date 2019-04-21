@@ -4,12 +4,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Bundle 'VundleVim/Vundle.vim'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'bling/vim-airline'
-Bundle 'tpope/vim-fugitive'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
